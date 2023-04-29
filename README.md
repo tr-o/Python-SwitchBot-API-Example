@@ -2,6 +2,21 @@
 
 This repository contains a Python example script that demonstrates how to use the SwitchBot API to get the list of devices and their status information, such as temperature, humidity, and battery level.
 
+## Features
+
+1. **Fetch Device List**: The script uses the SwitchBot API to retrieve a list of devices connected to your SwitchBot account. It displays the device ID and name for each device in the list.
+
+2. **Display Device Status**: For each device, the script fetches and displays the status information, including temperature, humidity, and battery level (if available).
+
+3. **Secure API Authentication**: The script generates a secure signature for API requests using the HMAC-SHA256 algorithm, ensuring that your API credentials remain safe.
+
+4. **Error Handling**: The code includes error handling to manage unsuccessful API responses or missing data, ensuring that the script does not crash and provides meaningful messages to the user.
+
+5. **Easy Setup**: The script only requires the \`requests\` library, which is a popular Python library for making HTTP requests. Other dependencies are part of Python's standard library, making it simple to set up and run the script on most systems.
+
+6. **Cross-platform Compatibility**: The code is written in Python, a widely used and platform-independent programming language, allowing the script to run on various operating systems, such as Windows, macOS, and Linux, with Python and the required libraries installed.
+
+
 ## Usage
 
 1. Clone this repository:
