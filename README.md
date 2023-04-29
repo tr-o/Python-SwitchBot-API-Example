@@ -1,40 +1,39 @@
-# Python-SwitchBot-API-Example
-This Python script demonstrates how to use the SwitchBot API to retrieve the status of SwitchBot devices and display the temperature, humidity, and battery level for each device.
+# SwitchBot API Python Example
 
-# Prerequisites
-Before running this script, you will need:
+This repository contains a Python example script that demonstrates how to use the SwitchBot API to get the list of devices and their status information, such as temperature, humidity, and battery level.
 
-A SwitchBot account and devices that you want to monitor.
-The latest version of the SwitchBot app installed on your mobile device.
-Python 3.x installed on your computer.
-The following Python modules installed: requests, json, time, hashlib, hmac, base64, uuid.
+## Imported Modules
 
-# Installation and Usage
-Clone or download this repository to your local machine.
+The script imports several Python modules and libraries that are used for various tasks. Here's an explanation of what each module does:
 
-Open a terminal or command prompt and navigate to the directory where the script is located.
+1. \`requests\`: The \`requests\` library is a popular HTTP library for Python. It is used to make API calls to the SwitchBot API to get device information and status. The library simplifies the process of working with HTTP requests and provides methods to send HTTP requests, handle redirection, and process the responses.
+2. \`json\`: The \`json\` module is part of Python's standard library and is used to work with JSON data. In this script, it is not directly used since the \`requests\` library can handle JSON data by default. However, if you need to work with JSON data more extensively, this module provides functions like \`json.loads()\` and \`json.dumps()\` for parsing JSON strings and converting Python objects to JSON strings, respectively.
+3. \`time\`: The \`time\` module is part of Python's standard library and provides various time-related functions. In this script, it is used to get the current timestamp in milliseconds, which is required for generating the signature for the API header.
+4. \`hashlib\`: The \`hashlib\` module is part of Python's standard library and provides various hash algorithms like SHA-256. In this script, it is used to generate the SHA-256 hash for the signature in the API header.
+5. \`hmac\`: The \`hmac\` module is part of Python's standard library and provides a way to generate message authentication codes (MAC) using various hash algorithms. In this script, it is used to create a hash-based message authentication code (HMAC) using the SHA-256 algorithm for the signature in the API header.
+6. \`base64\`: The \`base64\` module is part of Python's standard library and provides functions to work with Base64 encoding and decoding. In this script, it is used to encode the HMAC signature as a Base64 string.
+7. \`uuid\`: The \`uuid\` module is part of Python's standard library and provides functions to generate universally unique identifiers (UUID). In this script, it is used to generate a UUID for the \`nonce\` field in the API header.
 
-Install the required Python modules if they are not already installed. For example, you can use pip to install the requests module by running the following command:
+## Usage
 
-Copy code
-pip install requests
-Open the script file switchbot_api.py in a text editor.
+1. Clone this repository:
 
-Copy and paste your SwitchBot API token and secret key from the SwitchBot app into the script, replacing the empty strings token and secret:
+\`\`\`bash
+git clone https://github.com/yourusername/switchbot-api-python-example.git
+\`\`\`
 
-Copy code
-token = '<YOUR_API_TOKEN>'
-secret = '<YOUR_API_SECRET>'
-Save the script file.
+2. Navigate to the cloned repository:
 
-Run the script by executing the following command in the terminal:
+\`\`\`bash
+cd switchbot-api-python-example
+\`\`\`
 
-Copy code
-python switchbot_api.py
-The script will fetch a list of your SwitchBot devices and display the temperature, humidity, and battery level for each device.
+3. Open the \`switchbot.py\` file and replace \`<YOUR_API_TOKEN>\` and \`<YOUR_API_SECRET_KEY>\` with your SwitchBot API token and secret key, respectively. You can find these in the SwitchBot app (v6.14 or later).
 
-# License
-This script is released under the MIT License. See the LICENSE file for details.
+4. Save the changes and run the script:
 
-# Credits
-This script was written by [Your Name] and is based on the SwitchBot API documentation.
+\`\`\`bash
+python switchbot.py
+\`\`\`
+
+The script will fetch the list of devices and display their status information.
